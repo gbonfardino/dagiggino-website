@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Da Giggino - Autentici sapori del Sud Italia nel cuore di Padova. Arancine, focacce, panzerotti, pizza napoletana e dolci siciliani. Via San Francesco 212, Padova.">
+    <meta name="keywords"
+        content="Da Giggino, Padova, cibo napoletano, cibo siciliano, arancine, focacce, panzerotti, pizza portafoglio, street food italiano">
+    <meta name="author" content="Da Giggino">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Da Giggino - Sapori del Sud a Padova">
+    <meta property="og:description"
+        content="Autentici sapori del Sud Italia nel cuore di Padova. Arancine, focacce, panzerotti e dolci siciliani.">
+    <meta property="og:image" content="DA GIGGINO LOGO.jpg">
+    <meta property="og:url" content="https://www.dagiggino.com">
+    <meta property="og:type" content="restaurant">
+
+    <title>Da Giggino - Sapori del Sud a Padova | Arancine, Focacce, Pizza Napoletana</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Da Giggino",
+        "image": "https://www.dagiggino.com/DA GIGGINO LOGO.jpg",
+        "url": "https://www.dagiggino.com",
+        "telephone": "+393777073860",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via San Francesco, 212",
+            "addressLocality": "Padova",
+            "addressRegion": "PD",
+            "postalCode": "35121",
+            "addressCountry": "IT"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.4064,
+            "longitude": 11.8768
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "11:00",
+            "closes": "20:00"
+        },
+        "servesCuisine": ["Italian", "Neapolitan", "Sicilian"],
+        "priceRange": "€",
+        "sameAs": [
+            "https://www.instagram.com/dagiggino/",
+            "https://www.facebook.com/dagigginopadova/"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="DA GIGGINO LOGO.jpg" alt="Da Giggino Logo" class="hero-logo">
+            <p class="hero-tagline">Autentici Sapori del Sud Italia</p>
+            <p class="hero-location">📍 Nel cuore di Padova</p>
+            <a href="#dove-siamo" class="btn-primary">Vieni a trovarci</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Da Giggino</a>
+            <ul class="nav-menu">
+                <li><a href="#chi-siamo">Chi Siamo</a></li>
+                <li><a href="#prodotti">I Nostri Prodotti</a></li>
+                <li><a href="#dove-siamo">Dove Siamo</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Chi Siamo Section -->
+    <section class="chi-siamo" id="chi-siamo">
+        <div class="container">
+            <div class="chi-siamo-content">
+                <div class="chi-siamo-text">
+                    <h2>La Nostra Storia</h2>
+                    <p class="lead">Dal 2019, il cuore del Sud nel centro di Padova</p>
+                    <p>Tutto è iniziato quando la <strong>Signora Ivana</strong>, napoletana verace, e suo figlio hanno
+                        deciso di trasformare in realtà un sogno custodito nel cassetto da troppi anni: aprire un
+                        piccolo forno che portasse a Padova i profumi e i sapori autentici di casa.</p>
+                    <p>Da Giggino non è solo un negozio, è l'incontro di due anime del Sud. Le nostre radici affondano
+                        nella tradizione partenopea di Ivana e in quella siciliana di Palermo, città dove Ivana ha
+                        vissuto per 25 anni.</p>
+                    <p>È qui che le ricette dei nonni e dei genitori hanno ripreso vita: dalle arancine ai panzerotti
+                        fritti, dalla pizza a portafoglio alla montanara, fino alla classica frittata di pasta.</p>
+                    <p class="highlight">Oggi, dopo 6 anni di attività, siamo orgogliosi di essere diventati un punto di
+                        riferimento per decine di padovani che ogni giorno scelgono la nostra cucina.</p>
+                </div>
+                <div class="chi-siamo-image">
+                    <img src="Signora Ivana proprietaria.jpg" alt="Signora Ivana con le specialità di Da Giggino">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prodotti Section -->
+    <section class="prodotti" id="prodotti">
+        <div class="container">
+            <h2>I Nostri Prodotti</h2>
+            <p class="section-subtitle">Specialità del Sud preparate ogni giorno con amore e ingredienti di qualità</p>
+
+            <div class="prodotti-categories">
+                <button class="category-btn active" data-category="all">Tutti</button>
+                <button class="category-btn" data-category="salato">Salato</button>
+                <button class="category-btn" data-category="dolce">Dolce</button>
+            </div>
+
+            <div class="prodotti-grid">
+                <!-- Salati -->
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Arancine palermitane.jpg" alt="Arancine Palermitane" loading="lazy">
+                    </div>
+                    <h3>Arancine Palermitane</h3>
+                    <p>La tradizione siciliana in ogni morso</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Focaccia crudo mozzarella di bufala.jpg" alt="Focaccia Crudo e Mozzarella di Bufala"
+                            loading="lazy">
+                    </div>
+                    <h3>Focaccia Crudo e Bufala</h3>
+                    <p>Crudo di Parma e mozzarella di bufala</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Focaccia pistacchio mortella stracciatella.jpg"
+                            alt="Focaccia Pistacchio Mortadella Stracciatella" loading="lazy">
+                    </div>
+                    <h3>Focaccia Pistacchio e Mortadella</h3>
+                    <p>Con crema di pistacchio e stracciatella</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Focaccia salsiccia e friarelli.jpg" alt="Focaccia Salsiccia e Friarielli"
+                            loading="lazy">
+                    </div>
+                    <h3>Focaccia Salsiccia e Friarielli</h3>
+                    <p>Il classico napoletano</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Focaccia vegetariana.jpg" alt="Focaccia Vegetariana" loading="lazy">
+                    </div>
+                    <h3>Focaccia Vegetariana</h3>
+                    <p>Fresca e genuina</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Montanara.jpg" alt="Montanara Napoletana" loading="lazy">
+                    </div>
+                    <h3>Montanara</h3>
+                    <p>Pizza fritta napoletana</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Pizza portafoglio napoletana .jpg" alt="Pizza a Portafoglio" loading="lazy">
+                    </div>
+                    <h3>Pizza a Portafoglio</h3>
+                    <p>Lo street food napoletano per eccellenza</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Panino napoletano.jpg" alt="Panino Napoletano" loading="lazy">
+                    </div>
+                    <h3>Panino Napoletano</h3>
+                    <p>Farcito con salumi e formaggi campani</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Frittatina di pasta.jpg" alt="Frittatina di Pasta" loading="lazy">
+                    </div>
+                    <h3>Frittatina di Pasta</h3>
+                    <p>Pasta fritta ripiena</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Crocchè di patate.jpg" alt="Crocchè di Patate" loading="lazy">
+                    </div>
+                    <h3>Crocchè di Patate</h3>
+                    <p>Croccanti e filanti</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Taralli classici napoletani.jpg" alt="Taralli Napoletani" loading="lazy">
+                    </div>
+                    <h3>Taralli Napoletani</h3>
+                    <p>Croccanti taralli artigianali</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Caponata - Cotono.jpg" alt="Caponata e Contorni" loading="lazy">
+                    </div>
+                    <h3>Caponata e Contorni</h3>
+                    <p>Contorni della tradizione</p>
+                </div>
+
+                <div class="prodotto-card" data-category="salato">
+                    <div class="prodotto-image">
+                        <img src="Pasta con le sarde - Contorno.jpg" alt="Pasta con le Sarde" loading="lazy">
+                    </div>
+                    <h3>Pasta con le Sarde</h3>
+                    <p>Ricetta tradizionale siciliana</p>
+                </div>
+
+                <!-- Dolci -->
+                <div class="prodotto-card" data-category="dolce">
+                    <div class="prodotto-image">
+                        <img src="Cannoli Siciliani.jpg" alt="Cannoli Siciliani" loading="lazy">
+                    </div>
+                    <h3>Cannoli Siciliani</h3>
+                    <p>Ripieni di ricotta fresca</p>
+                </div>
+
+                <div class="prodotto-card" data-category="dolce">
+                    <div class="prodotto-image">
+                        <img src="Pasticciotto leccese.jpg" alt="Pasticciotto Leccese" loading="lazy">
+                    </div>
+                    <h3>Pasticciotto Leccese</h3>
+                    <p>Crema pasticcera avvolta in pasta frolla</p>
+                </div>
+
+                <div class="prodotto-card" data-category="dolce">
+                    <div class="prodotto-image">
+                        <img src="Pastierina napoletana.jpg" alt="Pastiera Napoletana" loading="lazy">
+                    </div>
+                    <h3>Pastiera Napoletana</h3>
+                    <p>Il dolce tipico partenopeo</p>
+                </div>
+
+                <div class="prodotto-card" data-category="dolce">
+                    <div class="prodotto-image">
+                        <img src="Misto dolcetti.jpg" alt="Misto Dolcetti" loading="lazy">
+                    </div>
+                    <h3>Misto Dolcetti</h3>
+                    <p>Assortimento di dolci tradizionali</p>
+                </div>
+            </div>
+
+            <div class="impasto-highlight">
+                <div class="impasto-image">
+                    <img src="Impasto 48h.jpg" alt="Impasto lievitato 48 ore" loading="lazy">
+                </div>
+                <div class="impasto-text">
+                    <h3>Impasto lievitato 48 ore</h3>
+                    <p>Utilizziamo solo impasti a lunga lievitazione per garantire leggerezza e digeribilità in ogni
+                        nostro prodotto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dove Siamo Section -->
+    <section class="dove-siamo" id="dove-siamo">
+        <div class="container">
+            <h2>Dove Siamo</h2>
+            <p class="section-subtitle">Vieni a trovarci nel cuore di Padova</p>
+
+            <div class="dove-siamo-content">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Indirizzo</h3>
+                        <p>Via San Francesco, 212</p>
+                        <p>35121 Padova (PD)</p>
+                        <a href="https://maps.google.com/?q=Via+San+Francesco+212+Padova" target="_blank" rel="noopener"
+                            class="btn-secondary">Ottieni Indicazioni</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">🕐</div>
+                        <h3>Orari</h3>
+                        <p>Tutti i giorni</p>
+                        <p class="orari-time">11:00 - 20:00</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Contatti</h3>
+                        <a href="tel:+393777073860" class="phone-link">377 707 3860</a>
+                        <a href="https://wa.me/393777073860" target="_blank" rel="noopener" class="whatsapp-link">
+                            <span>Scrivici su WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.0!2d11.8768!3d45.4064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda5a9e2db4a1%3A0x0!2sVia%20San%20Francesco%2C%20212%2C%20Padova!5e0!3m2!1sit!2sit!4v1234567890"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mappa Da Giggino - Via San Francesco 212, Padova">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="DA GIGGINO LOGO.jpg" alt="Da Giggino" class="footer-logo">
+                    <p>Autentici sapori del Sud Italia<br>nel cuore di Padova</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dagiggino/" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/dagigginopadova/" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-info">
+                    <h4>Contatti</h4>
+                    <p>Via San Francesco, 212 - Padova</p>
+                    <p>Tel: <a href="tel:+393777073860">377 707 3860</a></p>
+                    <p>Orari: 11:00 - 20:00</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Da Giggino. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky navbar
+        const navbar = document.getElementById('navbar');
+        const hero = document.querySelector('.hero');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > hero.offsetHeight - 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Product category filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const prodottoCards = document.querySelectorAll('.prodotto-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                prodottoCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
