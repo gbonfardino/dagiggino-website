@@ -5,42 +5,46 @@
 /* CSS Variables */
 :root {
     /* Colors - Inspired by Southern Italian warmth */
-    --color-primary: #C41E3A;        /* Rosso italiano */
+    --color-primary: #C41E3A;
+    /* Rosso italiano */
     --color-primary-dark: #A01830;
-    --color-secondary: #2D5016;      /* Verde oliva */
-    --color-accent: #F4A460;         /* Arancione caldo */
-    --color-cream: #FDF5E6;          /* Crema */
+    --color-secondary: #2D5016;
+    /* Verde oliva */
+    --color-accent: #F4A460;
+    /* Arancione caldo */
+    --color-cream: #FDF5E6;
+    /* Crema */
     --color-dark: #1A1A1A;
     --color-text: #333333;
     --color-text-light: #666666;
     --color-white: #FFFFFF;
-    
+
     /* Gradients */
     --gradient-warm: linear-gradient(135deg, #C41E3A 0%, #F4A460 100%);
-    --gradient-hero: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
-    
+    --gradient-hero: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     /* Spacing */
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 3rem;
     --space-xl: 5rem;
-    
+
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-full: 50px;
-    
+
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
-    --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
-    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -48,7 +52,9 @@
 }
 
 /* Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -79,7 +85,10 @@ a {
     transition: var(--transition-fast);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
@@ -133,7 +142,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
     color: var(--color-white);
     margin-bottom: var(--space-sm);
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-location {
@@ -147,6 +156,7 @@ h1, h2, h3, h4 {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -396,7 +406,6 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
     transition: var(--transition-slow);
 }
 
@@ -638,29 +647,29 @@ h1, h2, h3, h4 {
     .chi-siamo-content {
         grid-template-columns: 1fr;
     }
-    
+
     .chi-siamo-image {
         order: -1;
     }
-    
+
     .info-cards {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .impasto-highlight {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .impasto-image {
         flex: none;
         width: 100%;
@@ -682,31 +691,31 @@ h1, h2, h3, h4 {
         box-shadow: var(--shadow-lg);
         transition: var(--transition-normal);
     }
-    
+
     .nav-menu.active {
         right: 0;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .nav-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
-    
+
     .nav-toggle.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
-    
+
     .hero-logo {
         width: 200px;
     }
-    
+
     .prodotti-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
@@ -717,24 +726,24 @@ h1, h2, h3, h4 {
         --space-xl: 3rem;
         --space-lg: 2rem;
     }
-    
+
     .hero-tagline {
         font-size: 1.3rem;
     }
-    
+
     .hero-location {
         font-size: 1rem;
     }
-    
+
     .btn-primary {
         padding: 0.875rem 2rem;
         font-size: 1rem;
     }
-    
+
     .prodotti-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .prodotto-image {
         height: 200px;
     }
