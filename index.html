@@ -328,6 +328,91 @@
         </div>
     </section>
 
+    <!-- Recensioni Section -->
+    <section class="recensioni" id="recensioni">
+        <div class="container">
+            <h2>Cosa Dicono di Noi</h2>
+            <p class="section-subtitle">Le opinioni dei nostri clienti su Google</p>
+
+            <div class="recensioni-carousel">
+                <button class="carousel-btn prev" aria-label="Recensioni precedenti">‹</button>
+
+                <div class="recensioni-wrapper">
+                    <div class="recensioni-track">
+                        <!-- Pagina 1 -->
+                        <div class="recensioni-page active">
+                            <div class="recensione-card">
+                                <div class="stelle">★★★★★</div>
+                                <p class="recensione-text">"Tappa fissa ogni volta che passo per il centro di Padova!
+                                    Buonissime le focacce e gli arancini."</p>
+                                <div class="recensione-author">
+                                    <span class="author-name">Andrea M.</span>
+                                    <span class="google-badge">Google</span>
+                                </div>
+                            </div>
+                            <div class="recensione-card">
+                                <div class="stelle">★★★★★</div>
+                                <p class="recensione-text">"Prodotti di qualità, sapori autentici del Sud! Personale
+                                    gentile e disponibile."</p>
+                                <div class="recensione-author">
+                                    <span class="author-name">Giulia B.</span>
+                                    <span class="google-badge">Google</span>
+                                </div>
+                            </div>
+                            <div class="recensione-card">
+                                <div class="stelle">★★★★★</div>
+                                <p class="recensione-text">"Arancina al ragù spettacolare! Vera rosticceria siciliana a
+                                    Padova."</p>
+                                <div class="recensione-author">
+                                    <span class="author-name">Marco R.</span>
+                                    <span class="google-badge">Google</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagina 2 -->
+                        <div class="recensioni-page">
+                            <div class="recensione-card">
+                                <div class="stelle">★★★★★</div>
+                                <p class="recensione-text">"Tutto ottimo, dalle focacce alla pizza a portafoglio. Prezzi
+                                    onesti e qualità alta."</p>
+                                <div class="recensione-author">
+                                    <span class="author-name">Lucia G.</span>
+                                    <span class="google-badge">Google</span>
+                                </div>
+                            </div>
+                            <div class="recensione-card">
+                                <div class="stelle">★★★★★</div>
+                                <p class="recensione-text">"Ottimo cibo di strada del Sud. Locale pulito e titolare
+                                    simpaticissima. Consigliatissimo!"</p>
+                                <div class="recensione-author">
+                                    <span class="author-name">Claudio B.</span>
+                                    <span class="google-badge">Google</span>
+                                </div>
+                            </div>
+                            <div class="recensione-card">
+                                <div class="stelle">★★★★★</div>
+                                <p class="recensione-text">"Le focacce sono divine e anche i dolci meritano. Ottima
+                                    qualità degli ingredienti. Bravi!"</p>
+                                <div class="recensione-author">
+                                    <span class="author-name">Valentina S.</span>
+                                    <span class="google-badge">Google</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" aria-label="Recensioni successive">›</button>
+            </div>
+
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
     <!-- Dove Siamo Section -->
     <section class="dove-siamo" id="dove-siamo">
         <div class="container">
@@ -482,6 +567,37 @@
                     });
                 }
             });
+        });
+
+        // Reviews Carousel
+        const pages = document.querySelectorAll('.recensioni-page');
+        const dots = document.querySelectorAll('.carousel-dots .dot');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentPage = 0;
+
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                page.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentPage = index;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            const newIndex = currentPage === 0 ? pages.length - 1 : currentPage - 1;
+            showPage(newIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const newIndex = currentPage === pages.length - 1 ? 0 : currentPage + 1;
+            showPage(newIndex);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => showPage(i));
         });
     </script>
 </body>

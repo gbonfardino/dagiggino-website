@@ -332,6 +332,144 @@ h4 {
 }
 
 /* ===================================
+   Recensioni Section
+   =================================== */
+.recensioni {
+    padding: var(--space-xl) 0;
+    background: var(--color-white);
+}
+
+.recensioni h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.recensioni .section-subtitle {
+    color: var(--color-text-light);
+}
+
+.recensioni-carousel {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.recensioni-wrapper {
+    flex: 1;
+    overflow: hidden;
+}
+
+.recensioni-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.recensioni-page {
+    display: none;
+    gap: var(--space-md);
+    min-width: 100%;
+}
+
+.recensioni-page.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.carousel-btn {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--color-primary);
+    background: var(--color-white);
+    color: var(--color-primary);
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.carousel-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.dot.active {
+    background: var(--color-primary);
+}
+
+.recensione-card {
+    background: var(--color-cream);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+}
+
+.recensione-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.stelle {
+    color: #FFD700;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+}
+
+.recensione-text {
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.recensione-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.google-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background: #4285F4;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+}
+
+/* ===================================
    Prodotti Section
    =================================== */
 .prodotti {
@@ -674,6 +812,16 @@ h4 {
         flex: none;
         width: 100%;
         max-width: 300px;
+    }
+
+    .recensioni-page.active {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 }
 
