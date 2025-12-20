@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Timbratura - Da Giggino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .status-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .status-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .status-text {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .status-text.error {
+            color: #ff6b6b;
+        }
+
+        .status-text.success {
+            color: #4ade80;
+        }
+
+        .employees {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .employee-btn {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .employee-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+        }
+
+        .employee-btn:active {
+            transform: translateY(0);
+        }
+
+        .employee-btn:disabled {
+            background: #444;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.1);
+            border-top-color: #e94560;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px 24px;
+        }
+
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .result-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+        }
+
+        .retry-btn {
+            margin-top: 24px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 12px 24px;
+            color: #fff;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .retry-btn:hover {
+            background: rgba(255,255,255,0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Schermata GPS Loading -->
+    <div class="container" id="gpsLoading">
+        <div class="loading">
+            <div class="spinner"></div>
+            <div class="status-text">Verifica posizione GPS...</div>
+        </div>
+    </div>
+
+    <!-- Schermata Errore GPS -->
+    <div class="container hidden" id="gpsError">
+        <div class="status-card">
+            <div class="status-icon">📍</div>
+            <div class="status-text error" id="errorMessage">Errore GPS</div>
+        </div>
+        <button class="retry-btn" onclick="checkGPS()">🔄 Riprova</button>
+    </div>
+
+    <!-- Schermata Principale -->
+    <div class="container hidden" id="mainScreen">
+        <div class="logo">🍕</div>
+        <h1>Da Giggino</h1>
+        <p class="subtitle">Tocca il tuo nome per timbrare</p>
+        
+        <div class="employees">
+            <button class="employee-btn" onclick="timbra('Antilia')">👩 Antilia</button>
+            <button class="employee-btn" onclick="timbra('Gloria')">👩 Gloria</button>
+            <button class="employee-btn" onclick="timbra('Gianluigi')">👨 Gianluigi</button>
+        </div>
+    </div>
+
+    <!-- Schermata Invio -->
+    <div class="container hidden" id="sendingScreen">
+        <div class="loading">
+            <div class="spinner"></div>
+            <div class="status-text">Registrazione in corso...</div>
+        </div>
+    </div>
+
+    <!-- Schermata Successo -->
+    <div class="container hidden" id="successScreen">
+        <div class="result-card">
+            <div class="result-icon" id="resultIcon">✅</div>
+            <div class="result-title" id="resultTitle">Timbratura registrata!</div>
+            <div class="result-subtitle" id="resultSubtitle"></div>
+        </div>
+        <button class="retry-btn" onclick="location.reload()">🔄 Nuova timbratura</button>
+    </div>
+
+    <script>
+        // Configurazione
+        const CONFIG = {
+            webhookUrl: 'WEBHOOK_URL_PLACEHOLDER', // Sarà sostituito con l'URL n8n
+            shopLat: 45.4026,
+            shopLng: 11.8831,
+            radiusMeters: 50
+        };
+
+        let userPosition = null;
+
+        // Calcola distanza tra due coordinate (formula Haversine)
+        function getDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371000; // Raggio terra in metri
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
+        }
+
+        // Mostra schermata
+        function showScreen(screenId) {
+            document.querySelectorAll('.container').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Verifica GPS
+        function checkGPS() {
+            showScreen('gpsLoading');
+
+            if (!navigator.geolocation) {
+                showError('GPS non supportato dal browser');
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    userPosition = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    const distance = getDistance(
+                        userPosition.lat, userPosition.lng,
+                        CONFIG.shopLat, CONFIG.shopLng
+                    );
+
+                    if (distance <= CONFIG.radiusMeters) {
+                        showScreen('mainScreen');
+                    } else {
+                        showError(`Sei troppo lontano dal negozio (${Math.round(distance)}m). Avvicinati per timbrare.`);
+                    }
+                },
+                (error) => {
+                    let msg = 'Errore GPS: ';
+                    switch(error.code) {
+                        case 1: msg += 'Permesso negato. Attiva il GPS.'; break;
+                        case 2: msg += 'Posizione non disponibile.'; break;
+                        case 3: msg += 'Timeout. Riprova.'; break;
+                        default: msg += error.message;
+                    }
+                    showError(msg);
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
+        }
+
+        // Mostra errore
+        function showError(message) {
+            document.getElementById('errorMessage').textContent = message;
+            showScreen('gpsError');
+        }
+
+        // Timbra
+        async function timbra(nome) {
+            showScreen('sendingScreen');
+
+            const mapLink = `https://www.google.com/maps?q=${userPosition.lat},${userPosition.lng}`;
+
+            try {
+                const response = await fetch(CONFIG.webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome: nome,
+                        lat: userPosition.lat,
+                        lng: userPosition.lng,
+                        mapLink: mapLink,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+
+                const data = await response.json();
+
+                // Mostra risultato
+                document.getElementById('resultIcon').textContent = data.tipo === 'Entrata' ? '🟢' : '🔴';
+                document.getElementById('resultTitle').textContent = `${data.tipo} registrata!`;
+                document.getElementById('resultSubtitle').textContent = `${nome} - ${new Date().toLocaleTimeString('it-IT')}`;
+                showScreen('successScreen');
+
+            } catch (error) {
+                showError('Errore di connessione. Riprova.');
+            }
+        }
+
+        // Avvia verifica GPS
+        checkGPS();
+    </script>
+</body>
+</html>
