@@ -232,10 +232,10 @@
     <script>
         // Configurazione
         const CONFIG = {
-            webhookUrl: 'WEBHOOK_URL_PLACEHOLDER', // Sarà sostituito con l'URL n8n
+            webhookUrl: 'https://n8n.dagiggino.com/webhook/presenze', // URL produzione
             shopLat: 45.4026,
             shopLng: 11.8831,
-            radiusMeters: 50
+            radiusMeters: 50000 // TEMPORANEO per test - rimettere 50 dopo
         };
 
         let userPosition = null;
